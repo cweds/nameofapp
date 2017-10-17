@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /users
   # GET /users.json
   def index
     
-    if params[:q]
-      search_term = params[:q]
-      @products = Product.search(search_term)
-    else
-      @users = User.all
-    end
+    @users = User.all
+    
+    # if params[:q]
+    #   search_term = params[:q]
+    #   @products = Product.search(search_term)
+    # else
+    #   @users = User.all
+    # end
   end
 
   # GET /users/1

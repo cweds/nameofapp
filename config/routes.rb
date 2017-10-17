@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'products/index'
 
+
   post 'static_pages/thank_you'
   
   root 'static_pages#index'
