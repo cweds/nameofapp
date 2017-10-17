@@ -1,3 +1,27 @@
 <h1>Contact</h1>
 <p>Sporting Goods store located in Middle River, MD </p>
 <p> Give us a call at <b>(410) 335-0770</b> </p>
+<p> or send us an email below! <p>
+
+
+<%= flash[:notice] %>
+
+<%= form_with(url: "/static_pages/thank_you") do |form| %>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 cform">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+      </div>        
+      <div class="form-group">
+        <%= form.label :email, "Email Address" %>
+        <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :message %>
+        <%= form.text_area :message, class: "form-control", placeholder: "Enter Message" %>
+      </div>        
+    </div>
+  </div>
+  <%= form.submit "Send" %>   
+<% end %>
