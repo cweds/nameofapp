@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+#usrSubBtn
+{
+	margin:10px;
+}
+
+#chkBoxUsrReg{
+	margin: 0 auto;
+	margin-top: 5px;
+}
