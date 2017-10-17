@@ -4,24 +4,31 @@
 <p> or send us an email below! <p>
 
 
-<%= flash[:notice] %>
 
-<%= form_tag(url: "/static_pages/thank_you") do |form| %>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4 cform">
-      <div class="form-group">
-        <%= form.label :name %>
-        <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
-      </div>        
-      <div class="form-group">
-        <%= form.label :email, "Email Address" %>
-        <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+<div class="container-fluid">
+  <div class="jumbotron contact">
+
+
+    <%= form_tag("/static_pages/thank_you") do %>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 contact-content">
+
+        <%= flash[:notice] %>
+          <div class="form-group">
+            <%= label_tag :name %>
+            <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+          </div>      
+          <div class="form-group">
+            <%= label_tag :email, "Email Address" %>
+            <%= text_field_tag :email, nil, class: "form-control", :required => true, placeholder: "Enter Email" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :message %>
+            <%= text_area_tag :message, nil, class: "form-control", :required => true, placeholder: "Enter Message" %>
+          </div>  
+          <%= submit_tag("Send", class: "btn btn-warning") %>  
+        </div>
       </div>
-      <div class="form-group">
-        <%= form.label :message %>
-        <%= form.text_area :message, class: "form-control", placeholder: "Enter Message" %>
-      </div>        
-    </div>
-  </div>
-  <%= form.submit "Send" %>   
-<% end %>
+    <% end %>
+  </div> <!-- /jumbotron contact -->
+</div> <!-- /container-fluid -->
