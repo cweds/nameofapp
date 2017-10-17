@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+    else
+      @users = User.all
+    end
   end
 
   # GET /users/1
