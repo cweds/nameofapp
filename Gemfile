@@ -71,4 +71,6 @@ group :development, :test do
   gem 'capybara'
 end
 
+gem 'rails-controller-testing'
+
 
