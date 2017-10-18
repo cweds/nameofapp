@@ -74,5 +74,6 @@ end
 
 gem 'rails-controller-testing'
 
+gem 'stripe'
 
 
