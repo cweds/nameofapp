@@ -1,7 +1,6 @@
 
 <article class="container">
   <div class="show"> 
-    <p id="notice"><%= notice %></p>
     <div class="row">
     <div class="col-sm-9 col-md-9">
     
@@ -30,11 +29,16 @@
       <strong>Price:</strong>
       <%= @product.price %>
     </p>
+
+    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> 
+    </p>
+    <hr>
+    <%= render 'new_comment' %>
     
     </div>
     </div>
     <hr>
-    
+
     <br>
 
    <!--  <%= @product.highest_rating_comment %>
@@ -43,7 +47,16 @@
     <%= link_to 'Edit', edit_product_path(@product) , class: "btn btn-default" %>
     <%= link_to 'Back', products_path, class: "btn btn-default" %>
   </div>   
+  
   <br>
+
+  
+
+  <%= render 'comments' %>
+  <%= will_paginate @comments, class: 'text-center' %>
+
+  <br>
+
   
 </article>
 
