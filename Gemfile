@@ -66,4 +66,9 @@ gem 'cancancan', '~> 1.10'
 
 gem 'will_paginate', '~> 3.1.1'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem 'capybara'
+end
+
 
