@@ -45,11 +45,13 @@
 
     <br>
 
-   <!--  <%= @product.highest_rating_comment %>
-    <%= @product.lowest_rating_comment %> -->
-
-    <%= link_to 'Edit', edit_product_path(@product) , class: "btn btn-default" %>
+    <%- if user_signed_in? %>
+      <%= link_to 'Edit', edit_product_path(@product) , class: "btn btn-default" %>
+    <% else %>
+    <% end %>
+    
     <%= link_to 'Back', products_path, class: "btn btn-default" %>
+  
   </div>   
   
   <br>
