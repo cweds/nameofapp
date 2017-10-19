@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.carousel-inner {
+  width: 25%;
+  margin: 0 auto;
+}
+
+
+
 h1{
 	color: #27ae60;
 	font-family: helvetica;
@@ -42,11 +49,6 @@ background-color: #27ae60;
 
 .navbar-default{
 	background-color: #2ecc71;
-}
-
-
-.contact-content{
-  
 }
 
 
