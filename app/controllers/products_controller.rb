@@ -21,16 +21,19 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    authorize! :new, @product
   end
 
   # GET /products/1/edit
   def edit
+    authorize! :edit, @product
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    authorize! :create, @product
 
     respond_to do |format|
       if @product.save
