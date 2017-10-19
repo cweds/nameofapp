@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    authorize! :edit, @product
+    authorize! :edit, @product, :message => "Unable to read this article."
   end
 
   # POST /products
@@ -83,6 +83,8 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
