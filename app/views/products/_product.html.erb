@@ -1,16 +1,18 @@
-<div class="col-sm-2 col-md-4">
-	<% logger.debug "Product: #{product.name}"%>
-  <h4><%= link_to product.name, product %></h4>
-  <p><%= product.description %></p>
-  <%= image_tag(product.image_url, class: "img-responsive coming-soon") %>
-  <p><strong><strong>$ </strong><%= product.price %></strong></p>
-  <br>
- 
-  <%- if user_signed_in? %>
-  	<td><%= link_to 'Show', product %></td>
-	  <td><%= link_to 'Edit', edit_product_path(product)%></td>
-	  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<% else %>
-	<% end %>
+<% cache product do %>
+  <div class="col-sm-2 col-md-4">
+  	<% logger.debug "Product: #{product.name}"%>
+    <h4><%= link_to product.name, product %></h4>
+    <p><%= product.description %></p>
+    <%= image_tag(product.image_url, class: "img-responsive coming-soon") %>
+    <p><strong><strong>$ </strong><%= product.price %></strong></p>
+    <br>
+   
+    <%- if user_signed_in? %>
+    	<td><%= link_to 'Show', product %></td>
+  	  <td><%= link_to 'Edit', edit_product_path(product)%></td>
+  	  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  	<% else %>
+  	<% end %>
 
-</div><!-- /col -->
+  </div><!-- /col -->
+<% end %>
