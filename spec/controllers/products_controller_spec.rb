@@ -60,7 +60,7 @@ describe ProductsController, type: :controller do
     end
     it "allows admin to delete a product" do 
       delete :destroy, params: {id: @product}
-      expect(response).to redirect_to products_url
+      expect(response).to redirect_to root_path
     end
   end 
 end
