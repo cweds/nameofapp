@@ -3,11 +3,11 @@
   	<% logger.debug "Product: #{product.name}"%>
     <h4><%= link_to product.name, product %></h4>
     <p><%= product.description %></p>
-    <%= image_tag(product.image_url, class: "img-responsive coming-soon") %>
+    <div><%= link_to image_tag(product.image_url, class: 'img-responsive coming-soon'), product %></div>
     <p><strong><strong>$ </strong><%= product.price %></strong></p>
     <br>
    
-    <%- if user_signed_in? %>
+    <%- if @current_user.admin? %>
     	<td><%= link_to 'Show', product %></td>
   	  <td><%= link_to 'Edit', edit_product_path(product)%></td>
   	  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
