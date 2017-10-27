@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
   		Order.create(
   			product_id: params[:product_id],
   			user_id: @user.id,
-        total: @product.price * 100,
+        total: @product.price,
   		)
 		end
 
