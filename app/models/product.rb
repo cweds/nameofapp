@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 	has_many :orders
-	has_many :comments
+	has_many :comments, dependent: :destroy
 
 	validates :name, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.00}, :allow_blank => false

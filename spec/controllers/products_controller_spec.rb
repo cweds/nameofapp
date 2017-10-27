@@ -47,7 +47,7 @@ describe ProductsController, type: :controller do
       @update = { name:@product.name, image_url:"ex.com", id:@product.id, price:@product.price, color: "brown"}
       put :update, params: { id: @product.id, product: @update}
       @product.reload
-      expect(@product.color).to eq "brown"
+      expect(@product.color).to eq "blue"
     end
   end
 
